@@ -1,0 +1,29 @@
+[build-system]
+requires = ["setuptools>=69"]
+build-backend = "setuptools.build_meta"
+
+[project]
+name = "ketwright"
+version = "0.1.0"
+description = "An LLM agent that turns plain-English quantum tasks into Qiskit code, runs it on a simulator, and fixes its own mistakes."
+readme = "README.md"
+requires-python = ">=3.11"
+dependencies = [
+    "qiskit>=2.0",
+    "qiskit-aer>=0.17",
+    "numpy>=1.26",
+    "anthropic>=2.14",
+]
+
+[project.optional-dependencies]
+dev = ["pytest>=8"]
+
+[project.scripts]
+ketwright = "ketwright.cli:main"
+
+[tool.setuptools]
+packages = ["ketwright"]
+
+[tool.pytest.ini_options]
+testpaths = ["tests"]
+pythonpath = ["."]
