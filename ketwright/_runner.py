@@ -24,6 +24,8 @@ def _short_traceback() -> str:
     first = text.find(marker)
     if first != -1:
         text = "Traceback (most recent call last):\n  " + text[first:]
+    # Library paths sit under the user's home folder; keep usernames out of reports and logs.
+    text = text.replace(str(Path.home()), "~")
     return text[-3000:]
 
 

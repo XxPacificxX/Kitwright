@@ -1,5 +1,7 @@
 """The child-process runner (real subprocesses, no model calls)."""
 
+from pathlib import Path
+
 from ketwright.sandbox import run_code
 from tests.helpers import GHZ3, GHZ3_OLD_API
 
@@ -16,6 +18,7 @@ def test_import_of_removed_api_is_reported():
     assert not result.ok
     assert "ImportError" in result.error and "execute" in result.error
     assert 'File "candidate.py"' in result.error
+    assert str(Path.home()) not in result.error  # no local usernames in reports
 
 
 def test_missing_or_wrong_qc_is_reported():

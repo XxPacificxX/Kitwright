@@ -1,0 +1,83 @@
+{
+  "backend": "ollama",
+  "model": "qwen2.5-coder:7b",
+  "max_rounds": 4,
+  "n_tasks": 50,
+  "one_shot": {
+    "passed": 11,
+    "n": 50,
+    "rate": 0.22,
+    "ci95": [
+      0.128,
+      0.352
+    ]
+  },
+  "self_correcting": {
+    "passed": 12,
+    "n": 50,
+    "rate": 0.24,
+    "ci95": [
+      0.143,
+      0.374
+    ]
+  },
+  "fixed_by_self_correction": 1,
+  "broken_by_self_correction": 0,
+  "mcnemar_p": 1.0,
+  "pass_rate_by_round_cap": [
+    0.22,
+    0.24,
+    0.24,
+    0.24
+  ],
+  "by_category": {
+    "algorithm": {
+      "n": 14,
+      "one_shot": 2,
+      "self_correcting": 2
+    },
+    "application": {
+      "n": 5,
+      "one_shot": 1,
+      "self_correcting": 1
+    },
+    "state-prep": {
+      "n": 15,
+      "one_shot": 6,
+      "self_correcting": 7
+    },
+    "unitary": {
+      "n": 16,
+      "one_shot": 2,
+      "self_correcting": 2
+    }
+  },
+  "per_task_one_shot": {
+    "input_tokens": 459.2,
+    "output_tokens": 136.4,
+    "cache_read_tokens": 0.0,
+    "model_calls": 1.0,
+    "model_seconds": 28.5,
+    "cost_usd": 0.0
+  },
+  "per_task_self_correcting": {
+    "input_tokens": 3032.4,
+    "output_tokens": 387.8,
+    "cache_read_tokens": 0.0,
+    "model_calls": 2.92,
+    "model_seconds": 101.8,
+    "cost_usd": 0.0
+  },
+  "mean_attempts": 2.32,
+  "mean_wall_seconds": 105.0,
+  "self_check": {
+    "said_done": 30,
+    "said_done_and_correct": 11,
+    "said_done_but_wrong": 19
+  },
+  "statuses": {
+    "out_of_rounds": 20,
+    "verified": 30
+  },
+  "errors": 0
+}
