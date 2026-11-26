@@ -8,6 +8,8 @@ It ships with a 50-task evaluation set and hidden, automatic checks. Every repor
 
 It runs on a **local model through [Ollama](https://ollama.com)** by default (free, offline), or on **Claude** (`claude-opus-5-5`) through the Anthropic API.
 
+**Paper:** [Execution Feedback Fixes Crashes, Not Physics](docs/ketwright-paper.pdf) is a 15-page write-up of the first full evaluation. It covers the method, results, failure analysis and threats to validity.
+
 ```text
 $ python -m ketwright run "prepare a 5-qubit GHZ state"
 --- attempt 1 ---
@@ -155,6 +157,7 @@ ketwright/
   cli.py        python -m ketwright ...
 tests/          118 tests; the model is always scripted or mocked
 results/        committed evaluation runs (results.jsonl with transcripts, summary.md)
+docs/           ketwright-paper.pdf, the write-up of the findings
 ```
 
 ## Limitations
